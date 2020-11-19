@@ -86,7 +86,7 @@
           maxBounds: [[-90, -180], [90, 180]],
           preferCanvas: true
         })
-        // var tiles = L.tileLayer('http://218.205.125.142:8001/{z}/{x}/{y}.png').addTo(this.map)
+        var tiles = L.tileLayer('http://218.205.125.142:8001/{z}/{x}/{y}.png').addTo(this.map)
         //加载ArcGIS瓦片
         //
         this.map.on('movestart', (e) => {
