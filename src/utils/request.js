@@ -5,7 +5,7 @@ import router from '../router'
 // 创建axios实例
 
 const service = axios.create({
-  baseURL:process.env.VUE_APP_BASE_API , // api 的 base_url
+  baseURL:'http://192.168.1.36:8080' , // api 的 base_url
   timeout: 5000, // 请求超时时间
   withCredentials:true
 })
@@ -49,11 +49,11 @@ service.interceptors.response.use(
     // if(response.headers['jwtToken']){
     //   store.commit('setJToken',response.headers['jwtToken'])
     // }
-    if (data.code !== 0) {
+    if (data.state !== 'ok') {
       // console.log(data)
       // if(status===500) 处理token过期等
 
-      Promise.reject(data.msg);
+      Promise.reject(data);
 
 
 
